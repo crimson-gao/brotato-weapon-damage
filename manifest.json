@@ -1,0 +1,17 @@
+{
+  "name": "WeaponDamage",
+  "namespace": "Crimson",
+  "version_number": "1.0.0",
+  "description": "在游戏中实时显示各个武器造成的伤害与击杀数。\nDisplay overall damage and kill count each weapon dealt in game.",
+  "website_url": "https://github.com/crimson-gao/brotato-weapon-damage",
+  "dependencies": [],
+  "extra": {
+    "godot": {
+      "incompatibilities": [],
+      "authors": ["Crimson"],
+      "compatible_mod_loader_version": ["6.0.0"],
+      "compatible_game_version": ["0.8.0.3"],
+      "config_defaults": {}
+    }
+  }
+}

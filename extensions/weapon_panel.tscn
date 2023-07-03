@@ -1,0 +1,99 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://resources/fonts/actual/base/font_big_outlined.tres" type="DynamicFont" id=1]
+[ext_resource path="res://weapons/ranged/crossbow/crossbow_icon.png" type="Texture" id=2]
+[ext_resource path="res://ui/hud/ui_progress_bar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://mods-unpacked/Crimson-WeaponDamage/extensions/weapon_panel.gd" type="Script" id=4]
+[ext_resource path="res://resources/fonts/actual/base/font_subtitle.tres" type="DynamicFont" id=5]
+[ext_resource path="res://mods-unpacked/Crimson-WeaponDamage/extensions/icon_style.tres" type="StyleBox" id=6]
+[ext_resource path="res://resources/fonts/actual/base/font_small_button.tres" type="DynamicFont" id=7]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1505.0
+margin_bottom = -1004.0
+rect_min_size = Vector2( 415, 76 )
+rect_scale = Vector2( 0.7, 0.7 )
+script = ExtResource( 4 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 423.0
+margin_bottom = 76.0
+
+[node name="Container" type="Control" parent="HBoxContainer"]
+margin_right = 76.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 76, 76 )
+
+[node name="IconContainer" type="AspectRatioContainer" parent="HBoxContainer/Container"]
+unique_name_in_owner = true
+margin_left = 4.0
+margin_right = 80.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 76, 76 )
+
+[node name="Icon" type="Button" parent="HBoxContainer/Container/IconContainer"]
+unique_name_in_owner = true
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 71.0
+margin_bottom = 71.0
+rect_min_size = Vector2( 66, 66 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_styles/normal = ExtResource( 6 )
+icon = ExtResource( 2 )
+expand_icon = true
+
+[node name="PosLabel" type="Label" parent="HBoxContainer/Container"]
+unique_name_in_owner = true
+margin_left = 52.0
+margin_top = 47.0
+margin_right = 68.0
+margin_bottom = 52.0
+custom_fonts/font = ExtResource( 5 )
+text = "6"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 80.0
+margin_right = 400.0
+margin_bottom = 76.0
+alignment = 1
+
+[node name="UIProgressBar" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 3 )]
+unique_name_in_owner = true
+margin_top = 14.0
+margin_bottom = 62.0
+value = 40.0
+__meta__ = {
+"_edit_lock_": true
+}
+progress_color = Color( 0.85098, 0.266667, 0.25098, 0.643137 )
+
+[node name="KilledLabel" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+margin_left = 404.0
+margin_top = 22.0
+margin_right = 446.0
+margin_bottom = 53.0
+custom_fonts/font = ExtResource( 7 )
+text = "242"
+
+[node name="DamageContainer" type="VBoxContainer" parent="."]
+margin_left = 87.0
+margin_top = 20.0
+margin_right = 396.0
+margin_bottom = 57.0
+size_flags_vertical = 4
+alignment = 1
+
+[node name="DamageLabel" type="Label" parent="DamageContainer"]
+unique_name_in_owner = true
+margin_left = 146.0
+margin_right = 163.0
+margin_bottom = 37.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+align = 1
